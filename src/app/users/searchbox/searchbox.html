@@ -1,0 +1,16 @@
+<div class='row'>
+  <div class='col-sm-3'></div>
+  <div class='col-sm-6'>
+    <div class='input-group'>
+      <input id='search-box' ng-model='users.q' ng-model-options='{ debounce: 500 }' ng-blur='users.unFocusSearch()' type='text' class='form-control' placeholder='Search for...' aria-label='Search for...'>
+      <span class='input-group-btn'>
+        <button class='btn btn-secondary' type='button' ng-click='users.clearSearch()'>Clear</button>
+      </span>
+      <div class='dropdown-menu' id='search-dropdown'>
+        <button ng-repeat='user in users.userList' ng-mousedown='users.changeUser(user.id)' class='dropdown-item' type='button'>{{user.login}}</button>
+      </div>
+    </div>
+  </div>
+  <div class='col-sm-3'></div>
+</div>
+<!-- {{users[0].login}} -->
